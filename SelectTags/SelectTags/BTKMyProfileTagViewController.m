@@ -7,16 +7,17 @@
 //
 
 #import "BTKMyProfileTagViewController.h"
-#import "LPTagCollectionView.h"
+
+#import "UIViewController+BackButtonHandler.h"
 #import "UICollectionViewLeftAlignedLayout.h"
+#import "UIColor+LPKit.h"
+#import "NSMutableArray+LPKit.h"
+#import "Masonry.h"
+
+#import "LPTagCollectionView.h"
 #import "LPTagCell.h"
 #import "LPTagTextFieldCell.h"
 #import "LPTagModel.h"
-#import "LPTagCollectionView.h"
-#import "UIViewController+BackButtonHandler.h"
-#import "UIColor+LPKit.h"
-#import "Masonry.h"
-#import "NSMutableArray+LPKit.h"
 
 @interface BTKMyProfileTagViewController () <UICollectionViewDataSource, UICollectionViewDelegateLeftAlignedLayout, LPAddTagDelegate, UIGestureRecognizerDelegate, LPSwitchTagDelegate>
 
@@ -24,14 +25,15 @@
 
 @implementation BTKMyProfileTagViewController {
     UICollectionView *_selectedCollectionView;
+    UIView *_backgroundView;
+    UIButton *_submitButton;
+    UIMenuController *_menuController;
+    LPTagCollectionView *_tagCollectionView;
+    
     NSArray *_tagArray;
     NSMutableArray *_selectedArray;
-    UIView *_backgroundView;
-    UIMenuController *_menuController;
     UILongPressGestureRecognizer *_longPress;
     LPTagModel *_deleteModel;
-    LPTagCollectionView *_tagCollectionView;
-    UIButton *_submitButton;
     
     NSInteger _selectedCollectionViewHeight;
     NSInteger _tagCollectionViewHeight;
@@ -64,14 +66,16 @@
     model.isChoose = NO;
     [_selectedArray addObject:model];
     
-    LPTagModel *model2 = [[LPTagModel alloc] init];
-    model2.name = @"中华写字";
-    model2.isChoose = NO;
-    LPTagModel *model3 = [[LPTagModel alloc] init];
-    model3.name = @"啦啦啦德玛西亚";
-    model3.isChoose = NO;
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    for (NSInteger i = 0; i < 40; i ++) {
+        LPTagModel *model = [[LPTagModel alloc] init];
+        model.name = [NSString stringWithFormat:@"Tag %li", i];
+        model.isChoose = NO;
+        [array addObject:model];
+    }
     
-    _tagArray = @[model2, model3];
+    _tagArray = array.copy;
+    
     _maxSelectedNumber = 8;
     _selectedCollectionViewHeight = 0;
     _selectedCollectionViewMaxHeight = 250;
@@ -79,17 +83,19 @@
 
 - (void)loadView {
     [super loadView];
+    
     [self loadData];
+    
+    self.view.layer.masksToBounds = YES;
+    
     _backgroundView = [[UIView alloc] init];
     _backgroundView.layer.masksToBounds = YES;
     _backgroundView.layer.borderWidth = 1;
     _backgroundView.layer.borderColor = [UIColor colorWithHexString:@"CECECE"].CGColor;
     _backgroundView.backgroundColor = [UIColor whiteColor];
-    
     [self.view addSubview:_backgroundView];
     
     UICollectionViewLeftAlignedLayout *collectionViewLayout = [[UICollectionViewLeftAlignedLayout alloc] init];
-    
     _selectedCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:collectionViewLayout];
     _selectedCollectionView.dataSource = self;
     _selectedCollectionView.delegate = self;
@@ -97,8 +103,6 @@
     [_selectedCollectionView registerClass:[LPTagCell class] forCellWithReuseIdentifier:[LPTagCell cellReuseIdentifier]];
     [_selectedCollectionView registerClass:[LPTagTextFieldCell class] forCellWithReuseIdentifier:[LPTagTextFieldCell cellReuseIdentifier]];
     [self.view addSubview:_selectedCollectionView];
-    
-    self.view.layer.masksToBounds = YES;
     
     _longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(myProfileTagLongPress:)];
     [_selectedCollectionView addGestureRecognizer:_longPress];
@@ -119,6 +123,7 @@
     [_submitButton setBackgroundImage:[self createImageWithColor:[UIColor colorWithHexString:@"009788"]] forState:UIControlStateNormal];
     [_submitButton addTarget:self action:@selector(submitClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_submitButton];
+
     [self refreshConstraints];
 }
 
@@ -126,10 +131,12 @@
     if (_selectedCollectionViewHeight == 0) {
         _selectedCollectionViewHeight = _selectedCollectionView.contentSize.height;
     }
+    
     if (_tagCollectionViewHeight == 0 && _selectedCollectionViewHeight != 0) {
         _tagCollectionViewMaxHeight = self.view.frame.size.height - _selectedCollectionViewHeight - 12 - 80;
         _tagCollectionViewHeight = _tagCollectionViewMaxHeight < _tagCollectionView.contentSize.height ? _tagCollectionViewMaxHeight : _tagCollectionView.contentSize.height;
     }
+    
     [_selectedCollectionView mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.view).offset(12);
         make.left.right.equalTo(self.view);
@@ -179,6 +186,7 @@
         cell.model = _selectedArray[indexPath.row];
         return cell;
     }
+    
     LPTagTextFieldCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[LPTagTextFieldCell cellReuseIdentifier] forIndexPath:indexPath];
     cell.delegate = self;
     return cell;
@@ -227,7 +235,9 @@
             return;
         }
     }
+    
     NSLog(@"addTag");
+    
     for (int i = 0; i < _tagArray.count; i ++) {
         LPTagModel *model = _tagArray[i];
         if ([model.name isEqualToString:tagModel.name]) {
@@ -239,6 +249,7 @@
             break;
         }
     }
+    
     [_selectedArray addObject:tagModel];
         [_selectedCollectionView performBatchUpdates:^{
         [_selectedCollectionView insertItemsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForItem:_selectedArray.count - 1 inSection:0]]];

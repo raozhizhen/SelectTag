@@ -42,6 +42,7 @@
 - (void)setModel:(LPTagModel *)model {
     _model = model;
     _textLabel.text = model.name;
+    
     if (self.type == LPTagCellTypeSelected1) {
         self.contentView.backgroundColor = [UIColor colorWithHexString:@"009788"];
         [_textLabel setTextColor:[UIColor whiteColor]];
@@ -65,7 +66,6 @@
 - (void)refreshConstraints {
     [self setNeedsUpdateConstraints];
     [self updateConstraintsIfNeeded];
-    
     [self setNeedsDisplay];
     [self layoutIfNeeded];
 }
