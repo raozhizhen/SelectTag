@@ -33,9 +33,9 @@
 		8833D0651BF7105D00B0ADC8 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8833D0581BF7105D00B0ADC8 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		8833D0661BF7105D00B0ADC8 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8833D05A1BF7105D00B0ADC8 /* View+MASAdditions.m */; };
 		8833D0671BF7105D00B0ADC8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 8833D05C1BF7105D00B0ADC8 /* README.md */; };
-		8833D06A1BF710C800B0ADC8 /* UIColor+LPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8833D0691BF710C800B0ADC8 /* UIColor+LPKit.m */; };
 		8833D0821BF7128C00B0ADC8 /* NSMutableArray+LPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8833D0811BF7128C00B0ADC8 /* NSMutableArray+LPKit.m */; };
-		885E6CFD1C7601DE0071B648 /* UIImage+JMRoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 885E6CFC1C7601DE0071B648 /* UIImage+JMRoundedCorner.m */; };
+		888B73E41C7AB0CB005A5BF3 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B73E31C7AB0CB005A5BF3 /* UIImage+RoundedCorner.m */; };
+		888B73E71C7AB8D9005A5BF3 /* UIColor+SelectTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B73E61C7AB8D9005A5BF3 /* UIColor+SelectTags.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,12 +111,12 @@
 		8833D05A1BF7105D00B0ADC8 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
 		8833D05B1BF7105D00B0ADC8 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		8833D05C1BF7105D00B0ADC8 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		8833D0681BF710C800B0ADC8 /* UIColor+LPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+LPKit.h"; sourceTree = "<group>"; };
-		8833D0691BF710C800B0ADC8 /* UIColor+LPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LPKit.m"; sourceTree = "<group>"; };
 		8833D0801BF7128C00B0ADC8 /* NSMutableArray+LPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+LPKit.h"; sourceTree = "<group>"; };
 		8833D0811BF7128C00B0ADC8 /* NSMutableArray+LPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+LPKit.m"; sourceTree = "<group>"; };
-		885E6CFB1C7601DE0071B648 /* UIImage+JMRoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JMRoundedCorner.h"; sourceTree = "<group>"; };
-		885E6CFC1C7601DE0071B648 /* UIImage+JMRoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JMRoundedCorner.m"; sourceTree = "<group>"; };
+		888B73E21C7AB0CB005A5BF3 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		888B73E31C7AB0CB005A5BF3 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		888B73E51C7AB8D9005A5BF3 /* UIColor+SelectTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SelectTags.h"; sourceTree = "<group>"; };
+		888B73E61C7AB8D9005A5BF3 /* UIColor+SelectTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SelectTags.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,12 +213,12 @@
 		8833D02A1BF70F4D00B0ADC8 /* LPTags */ = {
 			isa = PBXGroup;
 			children = (
-				8833D0681BF710C800B0ADC8 /* UIColor+LPKit.h */,
-				8833D0691BF710C800B0ADC8 /* UIColor+LPKit.m */,
-				885E6CFB1C7601DE0071B648 /* UIImage+JMRoundedCorner.h */,
-				885E6CFC1C7601DE0071B648 /* UIImage+JMRoundedCorner.m */,
+				888B73E51C7AB8D9005A5BF3 /* UIColor+SelectTags.h */,
+				888B73E61C7AB8D9005A5BF3 /* UIColor+SelectTags.m */,
 				8833D0801BF7128C00B0ADC8 /* NSMutableArray+LPKit.h */,
 				8833D0811BF7128C00B0ADC8 /* NSMutableArray+LPKit.m */,
+				888B73E21C7AB0CB005A5BF3 /* UIImage+RoundedCorner.h */,
+				888B73E31C7AB0CB005A5BF3 /* UIImage+RoundedCorner.m */,
 				8833D02B1BF70F4D00B0ADC8 /* LPTagCell.h */,
 				8833D02C1BF70F4D00B0ADC8 /* LPTagCell.m */,
 				8833D02D1BF70F4D00B0ADC8 /* LPTagCollectionView.h */,
@@ -358,7 +358,7 @@
 				TargetAttributes = {
 					8833CFF31BF70E5200B0ADC8 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = VS86A5N9W7;
+						DevelopmentTeam = 7JNEV3KP5F;
 					};
 					8833D00C1BF70E5200B0ADC8 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -425,12 +425,13 @@
 			files = (
 				8833D0661BF7105D00B0ADC8 /* View+MASAdditions.m in Sources */,
 				8833D03D1BF70F4D00B0ADC8 /* UICollectionViewLeftAlignedLayout.m in Sources */,
+				888B73E71C7AB8D9005A5BF3 /* UIColor+SelectTags.m in Sources */,
 				8833D0671BF7105D00B0ADC8 /* README.md in Sources */,
 				8833D03E1BF70F4D00B0ADC8 /* UIViewController+BackButtonHandler.m in Sources */,
 				8833D03A1BF70F4D00B0ADC8 /* LPTagCollectionView.m in Sources */,
+				888B73E41C7AB0CB005A5BF3 /* UIImage+RoundedCorner.m in Sources */,
 				8833CFFF1BF70E5200B0ADC8 /* ViewController.m in Sources */,
 				8833D0821BF7128C00B0ADC8 /* NSMutableArray+LPKit.m in Sources */,
-				8833D06A1BF710C800B0ADC8 /* UIColor+LPKit.m in Sources */,
 				8833D03B1BF70F4D00B0ADC8 /* LPTagModel.m in Sources */,
 				8833D0621BF7105D00B0ADC8 /* MASViewAttribute.m in Sources */,
 				8833D05E1BF7105D00B0ADC8 /* MASCompositeConstraint.m in Sources */,
@@ -438,7 +439,6 @@
 				8833CFFC1BF70E5200B0ADC8 /* AppDelegate.m in Sources */,
 				8833D0601BF7105D00B0ADC8 /* MASConstraintMaker.m in Sources */,
 				8833D05F1BF7105D00B0ADC8 /* MASConstraint.m in Sources */,
-				885E6CFD1C7601DE0071B648 /* UIImage+JMRoundedCorner.m in Sources */,
 				8833D0651BF7105D00B0ADC8 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				8833D0611BF7105D00B0ADC8 /* MASLayoutConstraint.m in Sources */,
 				8833D0641BF7105D00B0ADC8 /* NSArray+MASAdditions.m in Sources */,
@@ -584,13 +584,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: raozhizhen@loopeer.com (9ZTTTVTK98)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: raozhizhen@loopeer.com (9ZTTTVTK98)";
 				INFOPLIST_FILE = SelectTags/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoa.SelectTags;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "963f21f7-a07b-45f7-b480-32beeb1ca310";
 			};
 			name = Debug;
 		};
@@ -598,13 +598,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: raozhizhen@loopeer.com (9ZTTTVTK98)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: raozhizhen@loopeer.com (9ZTTTVTK98)";
 				INFOPLIST_FILE = SelectTags/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoa.SelectTags;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "963f21f7-a07b-45f7-b480-32beeb1ca310";
 			};
 			name = Release;
 		};

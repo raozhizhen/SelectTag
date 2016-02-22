@@ -10,7 +10,8 @@
 
 #import "UIViewController+BackButtonHandler.h"
 #import "UICollectionViewLeftAlignedLayout.h"
-#import "UIColor+LPKit.h"
+#import "UIColor+SelectTags.h"
+#import "UIImage+RoundedCorner.h"
 #import "NSMutableArray+LPKit.h"
 #import "Masonry.h"
 
@@ -19,7 +20,7 @@
 #import "LPTagTextFieldCell.h"
 #import "LPTagModel.h"
 
-@interface BTKMyProfileTagViewController () <UICollectionViewDataSource, UICollectionViewDelegateLeftAlignedLayout, LPAddTagDelegate, UIGestureRecognizerDelegate, LPSelectedTagDelegate>
+@interface BTKMyProfileTagViewController () <UICollectionViewDataSource, UICollectionViewDelegateLeftAlignedLayout, LPAddTagDelegate, UIGestureRecognizerDelegate, LPSwitchTagDelegate>
 
 @end
 
@@ -56,7 +57,7 @@
     self.navigationController.navigationBar.translucent = NO;
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
-    [self.view setBackgroundColor:[UIColor colorWithHexString:@"F3F3F3"]];
+    [self.view setBackgroundColor:[UIColor ST_F3F3F3_backgroundColor]];
 }
 
 - (void)loadData {
@@ -91,7 +92,7 @@
     _backgroundView = [[UIView alloc] init];
     _backgroundView.layer.masksToBounds = YES;
     _backgroundView.layer.borderWidth = 1;
-    _backgroundView.layer.borderColor = [UIColor colorWithHexString:@"CECECE"].CGColor;
+    _backgroundView.layer.borderColor = [UIColor ST_CECECE_backgroundColor2].CGColor;
     _backgroundView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_backgroundView];
     
@@ -119,8 +120,8 @@
         _submitButton.enabled = NO;
     }
     [_submitButton setTitle:@"保存" forState:UIControlStateNormal];
-    [_submitButton setBackgroundImage:[self createImageWithColor:[UIColor colorWithHexString:@"DCDCDC"]] forState:UIControlStateDisabled];
-    [_submitButton setBackgroundImage:[self createImageWithColor:[UIColor colorWithHexString:@"009788"]] forState:UIControlStateNormal];
+    [_submitButton setBackgroundImage:[UIImage createImageWithColor:[UIColor ST_DCDCDC_separatorColor]] forState:UIControlStateDisabled];
+    [_submitButton setBackgroundImage:[UIImage createImageWithColor:[UIColor ST_009788_mainColor]  ] forState:UIControlStateNormal];
     [_submitButton addTarget:self action:@selector(submitClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_submitButton];
 
@@ -268,12 +269,12 @@
     }
 }
 
-# pragma mark - LPSelectedTagDelegate
-- (void)selectedTag:(LPTagModel *)tagModel {
+# pragma mark - LPSwitchTagDelegate
+- (void)switchTag:(LPTagModel *)tagModel {
     [self addTag:tagModel];
 }
 
-- (void)unSelectedTag:(LPTagModel *)tagModel {
+- (void)disSwitchTag:(LPTagModel *)tagModel {
     [self deleteTag:tagModel];
 }
 
@@ -377,17 +378,6 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [self.view endEditing:YES];
-}
-
-- (UIImage *)createImageWithColor:(UIColor *)color {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return image;
 }
 
 @end

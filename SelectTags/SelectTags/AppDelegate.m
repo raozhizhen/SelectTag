@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "BTKMyProfileTagViewController.h"
-#import "UIColor+LPKit.h"
+#import "UIColor+SelectTags.h"
 
 @interface AppDelegate ()
 
@@ -32,7 +32,7 @@
     NSDictionary *attributes = @{ NSFontAttributeName: [UIFont systemFontOfSize:16],
                                   NSForegroundColorAttributeName: [UIColor whiteColor]};
     [[UINavigationBar appearance] setTitleTextAttributes:attributes];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithHexString:@"009788"]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor ST_009788_mainColor]];
     [UIBarButtonItem.appearance setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -64) forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     

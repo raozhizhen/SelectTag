@@ -9,6 +9,22 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            filePath = "SelectTags/LPTags/LPTagCollectionView.h"
+            timestampString = "469176476.627845"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "@interface LPTagCollectionView"
+            landmarkType = "2">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
             filePath = "SelectTags/LPTags/LPTagTextFieldCell.m"
             timestampString = "469178384.918728"
             startingColumnNumber = "9223372036854775807"
@@ -58,23 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SelectTags/BTKMyProfileTagViewController.m"
-            timestampString = "469178831.716624"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
-            landmarkName = "-addTag:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SelectTags/BTKMyProfileTagViewController.m"
-            timestampString = "469178831.716624"
+            timestampString = "477805846.024795"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "234"
@@ -90,28 +90,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SelectTags/BTKMyProfileTagViewController.m"
-            timestampString = "469179235.373086"
+            timestampString = "477805846.024795"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299"
-            landmarkName = "-showMenuViewController:"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "-addTag:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SelectTags/LPTags/LPTagTextFieldCell.m"
-            timestampString = "472303585.832428"
+            filePath = "SelectTags/BTKMyProfileTagViewController.m"
+            timestampString = "477805846.024795"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "-textField:shouldChangeCharactersInRange:replacementString:"
+            startingLineNumber = "300"
+            endingLineNumber = "300"
+            landmarkName = "-showMenuViewController:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

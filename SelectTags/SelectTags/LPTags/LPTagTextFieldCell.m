@@ -7,7 +7,7 @@
 //
 
 #import "LPTagTextFieldCell.h"
-#import "UIColor+LPKit.h"
+#import "UIColor+SelectTags.h"
 #import "Masonry.h"
 
 @interface LPTagTextFieldCell ()<UITextFieldDelegate>
@@ -32,7 +32,7 @@
     _textField = [[UITextField alloc] init];
     _textField.placeholder = @" 添加标签";
     _textField.delegate = self;
-    _textField.tintColor = [UIColor colorWithHexString:@"009788"];
+    _textField.tintColor = [UIColor ST_009788_mainColor];
     _textField.font = [UIFont systemFontOfSize:14];
     [_textField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.contentView addSubview:_textField];
