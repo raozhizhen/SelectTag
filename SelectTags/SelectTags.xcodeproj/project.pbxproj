@@ -35,6 +35,7 @@
 		8833D0671BF7105D00B0ADC8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 8833D05C1BF7105D00B0ADC8 /* README.md */; };
 		8833D06A1BF710C800B0ADC8 /* UIColor+LPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8833D0691BF710C800B0ADC8 /* UIColor+LPKit.m */; };
 		8833D0821BF7128C00B0ADC8 /* NSMutableArray+LPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8833D0811BF7128C00B0ADC8 /* NSMutableArray+LPKit.m */; };
+		885E6CFD1C7601DE0071B648 /* UIImage+JMRoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 885E6CFC1C7601DE0071B648 /* UIImage+JMRoundedCorner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,8 @@
 		8833D0691BF710C800B0ADC8 /* UIColor+LPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+LPKit.m"; sourceTree = "<group>"; };
 		8833D0801BF7128C00B0ADC8 /* NSMutableArray+LPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+LPKit.h"; sourceTree = "<group>"; };
 		8833D0811BF7128C00B0ADC8 /* NSMutableArray+LPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+LPKit.m"; sourceTree = "<group>"; };
+		885E6CFB1C7601DE0071B648 /* UIImage+JMRoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JMRoundedCorner.h"; sourceTree = "<group>"; };
+		885E6CFC1C7601DE0071B648 /* UIImage+JMRoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JMRoundedCorner.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +215,8 @@
 			children = (
 				8833D0681BF710C800B0ADC8 /* UIColor+LPKit.h */,
 				8833D0691BF710C800B0ADC8 /* UIColor+LPKit.m */,
+				885E6CFB1C7601DE0071B648 /* UIImage+JMRoundedCorner.h */,
+				885E6CFC1C7601DE0071B648 /* UIImage+JMRoundedCorner.m */,
 				8833D0801BF7128C00B0ADC8 /* NSMutableArray+LPKit.h */,
 				8833D0811BF7128C00B0ADC8 /* NSMutableArray+LPKit.m */,
 				8833D02B1BF70F4D00B0ADC8 /* LPTagCell.h */,
@@ -353,7 +358,7 @@
 				TargetAttributes = {
 					8833CFF31BF70E5200B0ADC8 = {
 						CreatedOnToolsVersion = 7.1.1;
-						DevelopmentTeam = 7JNEV3KP5F;
+						DevelopmentTeam = VS86A5N9W7;
 					};
 					8833D00C1BF70E5200B0ADC8 = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -433,6 +438,7 @@
 				8833CFFC1BF70E5200B0ADC8 /* AppDelegate.m in Sources */,
 				8833D0601BF7105D00B0ADC8 /* MASConstraintMaker.m in Sources */,
 				8833D05F1BF7105D00B0ADC8 /* MASConstraint.m in Sources */,
+				885E6CFD1C7601DE0071B648 /* UIImage+JMRoundedCorner.m in Sources */,
 				8833D0651BF7105D00B0ADC8 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				8833D0611BF7105D00B0ADC8 /* MASLayoutConstraint.m in Sources */,
 				8833D0641BF7105D00B0ADC8 /* NSArray+MASAdditions.m in Sources */,
@@ -578,8 +584,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = SelectTags/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoa.SelectTags;
@@ -592,8 +598,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = SelectTags/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoa.SelectTags;

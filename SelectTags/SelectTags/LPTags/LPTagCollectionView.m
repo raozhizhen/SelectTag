@@ -9,6 +9,7 @@
 #import "LPTagCollectionView.h"
 #import "LPTagCell.h"
 #import "UICollectionViewLeftAlignedLayout.h"
+#import "LPTagModel.h"
 
 @interface LPTagCollectionView() <UICollectionViewDataSource, UICollectionViewDelegateLeftAlignedLayout>
 
@@ -121,14 +122,14 @@
 }
 
 - (void)switchTag:(LPTagModel *)tagModel {
-    if (self.tagDelegate && [self.tagDelegate respondsToSelector:@selector(switchTag:)]) {
-        [self.tagDelegate switchTag:tagModel];
+    if (self.tagDelegate && [self.tagDelegate respondsToSelector:@selector(selectedTag:)]) {
+        [self.tagDelegate selectedTag:tagModel];
     }
 }
 
 - (void)disSwitchTag:(LPTagModel *)tagModel {
-    if (self.tagDelegate && [self.tagDelegate respondsToSelector:@selector(disSwitchTag:)]) {
-        [self.tagDelegate disSwitchTag:tagModel];
+    if (self.tagDelegate && [self.tagDelegate respondsToSelector:@selector(unSelectedTag:)]) {
+        [self.tagDelegate unSelectedTag:tagModel];
     }
 }
 
@@ -138,7 +139,7 @@
 #pragma mark - UICollectionViewDelegateLeftAlignedLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGSize size = [((LPTagModel *)_tagArray[indexPath.row]).name sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}];
+    CGSize size = [_tagArray[indexPath.row].name sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}];
     return CGSizeMake(size.width + 16, 30);
 }
 

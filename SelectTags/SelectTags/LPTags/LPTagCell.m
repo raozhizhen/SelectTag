@@ -9,8 +9,11 @@
 #import "LPTagCell.h"
 #import "Masonry.h"
 #import "UIColor+LPKit.h"
+#import "UIImage+JMRoundedCorner.h"
 
-@implementation LPTagCell
+@implementation LPTagCell {
+    UIImageView *_roundedCornerView;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -21,6 +24,8 @@
 }
 
 - (void)setupViews {
+//    _roundedCornerView =
+    
     _textLabel = [[UILabel alloc]init];
     [_textLabel setTextAlignment:NSTextAlignmentCenter];
     _textLabel.font = [UIFont systemFontOfSize:14];

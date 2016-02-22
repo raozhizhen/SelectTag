@@ -19,7 +19,7 @@
 #import "LPTagTextFieldCell.h"
 #import "LPTagModel.h"
 
-@interface BTKMyProfileTagViewController () <UICollectionViewDataSource, UICollectionViewDelegateLeftAlignedLayout, LPAddTagDelegate, UIGestureRecognizerDelegate, LPSwitchTagDelegate>
+@interface BTKMyProfileTagViewController () <UICollectionViewDataSource, UICollectionViewDelegateLeftAlignedLayout, LPAddTagDelegate, UIGestureRecognizerDelegate, LPSelectedTagDelegate>
 
 @end
 
@@ -268,12 +268,12 @@
     }
 }
 
-# pragma mark - LPSwitchTagDelegate
-- (void)switchTag:(LPTagModel *)tagModel {
+# pragma mark - LPSelectedTagDelegate
+- (void)selectedTag:(LPTagModel *)tagModel {
     [self addTag:tagModel];
 }
 
-- (void)disSwitchTag:(LPTagModel *)tagModel {
+- (void)unSelectedTag:(LPTagModel *)tagModel {
     [self deleteTag:tagModel];
 }
 
