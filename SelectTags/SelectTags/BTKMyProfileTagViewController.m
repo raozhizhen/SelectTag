@@ -200,7 +200,7 @@
         CGSize size = [((LPTagModel *)_selectedArray[indexPath.row]).name sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}];
         return CGSizeMake(size.width + 16, 30);
     }
-    return CGSizeMake(100, 30);
+    return CGSizeMake(20, 30);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
