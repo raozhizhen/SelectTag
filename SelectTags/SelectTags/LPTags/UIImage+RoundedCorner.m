@@ -7,27 +7,27 @@
 //
 
 #import "UIImage+RoundedCorner.h"
+#import "LPMath.h"
 
 @implementation UIImage (RoundedCorner)
-- (UIImage *)imageWithRoundedCornersAndSize:(CGSize)sizeToFit andCornerRadius:(CGFloat)radius {
-    return [UIImage imageWithRoundedCornersAndSize:sizeToFit CornerRadius:radius borderColor:nil borderWidth:0 backgroundColor:nil backgroundImage:self];
+- (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit andCornerRadius:(CGFloat)radius {
+    return [UIImage jm_imageWithRoundedCornersAndSize:sizeToFit CornerRadius:radius borderColor:nil borderWidth:0 backgroundColor:nil backgroundImage:self];
 }
 
-+ (UIImage *)imageWithRoundedCornersAndSize:(CGSize)sizeToFit CornerRadius:(CGFloat)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth {
-    return [UIImage imageWithRoundedCornersAndSize:sizeToFit CornerRadius:radius borderColor:borderColor borderWidth:0 backgroundColor:nil backgroundImage:nil];
++ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit CornerRadius:(CGFloat)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth {
+    return [UIImage jm_imageWithRoundedCornersAndSize:sizeToFit CornerRadius:radius borderColor:borderColor borderWidth:borderWidth backgroundColor:nil backgroundImage:nil];
 }
 
-+ (UIImage *)imageWithRoundedCornersAndSize:(CGSize)sizeToFit andCornerRadius:(CGFloat)radius andColor:(UIColor *)color {
-    return [UIImage imageWithRoundedCornersAndSize:sizeToFit CornerRadius:radius borderColor:nil borderWidth:0 backgroundColor:color backgroundImage:nil];
++ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit andCornerRadius:(CGFloat)radius andColor:(UIColor *)color {
+    return [UIImage jm_imageWithRoundedCornersAndSize:sizeToFit CornerRadius:radius borderColor:nil borderWidth:0 backgroundColor:color backgroundImage:nil];
 }
 
-+ (UIImage *)imageWithRoundedCornersAndSize:(CGSize)sizeToFit CornerRadius:(CGFloat)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage {
++ (UIImage *)jm_imageWithRoundedCornersAndSize:(CGSize)sizeToFit CornerRadius:(CGFloat)radius borderColor:(UIColor *)borderColor borderWidth:(CGFloat)borderWidth backgroundColor:(UIColor *)backgroundColor backgroundImage:(UIImage *)backgroundImage {
+    backgroundImage = [UIImage imageNamed:@"avatar"];
+    backgroundImage = [backgroundImage scaleToSize:sizeToFit];
+    sizeToFit = CGSizeMake(pixel(sizeToFit.width), sizeToFit.height);
     UIGraphicsBeginImageContextWithOptions(sizeToFit, NO, UIScreen.mainScreen.scale);
-//    UIImage *image;
-
     if ((borderWidth != 0 && borderColor) || backgroundColor) {
-//        [image drawInRect:rect];
-
         //设置上下文
         CGContextRef context = UIGraphicsGetCurrentContext();
         //边框大小
@@ -35,36 +35,24 @@
         //边框颜色
         CGContextSetStrokeColorWithColor(context, borderColor.CGColor);
         //矩形填充颜色
+        if (!backgroundColor) {
+            backgroundColor = [UIColor whiteColor];
+        }
         CGContextSetFillColorWithColor(context, backgroundColor.CGColor);
         CGFloat height = sizeToFit.height;
         CGFloat width = sizeToFit.width;
-    
-        CGContextMoveToPoint(context, width, radius);  // 开始坐标右边开始
-        CGContextAddArcToPoint(context, width, height, width - radius, height, radius);  // 右下角角度
-        CGContextAddArcToPoint(context, 0, height, 0, height - radius, radius); // 左下角角度
-        CGContextAddArcToPoint(context, 0, 0, width, 0, radius); // 左上角
-        CGContextAddArcToPoint(context, width, 0, width, radius, radius); // 右上角
+        CGFloat boardWidth = borderWidth / 2;
+        CGFloat drawRadius = radius - boardWidth;
+        
+        CGContextMoveToPoint(context, width - boardWidth, drawRadius + boardWidth);  // 开始坐标右边开始
+        CGContextAddArcToPoint(context, width - boardWidth, height - boardWidth, width - drawRadius - boardWidth, height - boardWidth, drawRadius);  // 右下角角度
+        CGContextAddArcToPoint(context, boardWidth, height - boardWidth, boardWidth, height - drawRadius - boardWidth, drawRadius); // 左下角角度
+        CGContextAddArcToPoint(context, boardWidth, boardWidth, width - boardWidth, boardWidth, drawRadius); // 左上角
+        CGContextAddArcToPoint(context, width - boardWidth, boardWidth, width - boardWidth, drawRadius + boardWidth, drawRadius); // 右上角
         CGContextDrawPath(context, kCGPathFillStroke); //根据坐标绘制路径
     }
     if (backgroundImage) {
         CGRect rect = (CGRect){0.f, 0.f, sizeToFit};
-        //        CGColorSpaceRef colorspace = CGImageGetColorSpace(backgroundImage.CGImage);
-        //
-        //        CGContextRef context = CGBitmapContextCreate(NULL,
-        //                                                     sizeToFit.width , // Changed this
-        //                                                     sizeToFit.height, // Changed this
-        //                                                     CGImageGetBitsPerComponent(backgroundImage.CGImage),
-        //                                                     CGImageGetBytesPerRow(backgroundImage.CGImage)/CGImageGetWidth(backgroundImage.CGImage)*sizeToFit.width, // Changed this
-        //                                                     colorspace,
-        //                                                     CGImageGetAlphaInfo(backgroundImage.CGImage));
-        //
-        // Removed clipping code
-        
-        // draw image to context
-        //        CGContextDrawImage(context, CGContextGetClipBoundingBox(context), backgroundImage.CGImage);
-        
-        // extract resulting image from context
-        //        CGImageRef imgRef = CGBitmapContextCreateImage(context);
         CGContextAddPath(UIGraphicsGetCurrentContext(),
                          [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius].CGPath);
         CGContextClip(UIGraphicsGetCurrentContext());
@@ -76,37 +64,44 @@
     return outImage;
 }
 
-+ (UIImage *)yal_imageWithRoundedCornersAndSize:(CGSize)sizeToFit andCornerRadius:(CGFloat)radius andColor:(UIColor *)color {
-    CGRect rect = (CGRect){0.f, 0.f, sizeToFit};
-//    UIGraphicsBeginImageContext(rect.size);
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGContextSetFillColorWithColor(context, [color CGColor]);
-//    CGContextFillRect(context, rect);
-//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-    UIImage *image = [UIImage createImageWithColor:color];
+- (UIImage*)scaleToSize:(CGSize)size
+{
+    CGFloat width = CGImageGetWidth(self.CGImage);
+    CGFloat height = CGImageGetHeight(self.CGImage);
     
-    UIGraphicsBeginImageContextWithOptions(sizeToFit, NO, UIScreen.mainScreen.scale);
-    CGContextAddPath(UIGraphicsGetCurrentContext(),
-                     [UIBezierPath bezierPathWithRoundedRect:rect cornerRadius:radius].CGPath);
-    CGContextClip(UIGraphicsGetCurrentContext());
-    [image drawInRect:rect];
+    float verticalRadio = size.height * 1.0 / height;
+    float horizontalRadio = size.width * 1.0 / width;
+    float radio = 1;
+    if(verticalRadio > 1 && horizontalRadio > 1)
+    {
+        radio = verticalRadio < horizontalRadio ? horizontalRadio : verticalRadio;
+    }
+    else
+    {
+        radio = verticalRadio > horizontalRadio ? verticalRadio : horizontalRadio;
+    }
     
-    UIImage *output = UIGraphicsGetImageFromCurrentImageContext();
+    width = width * radio;
+    height = height * radio;
+    
+    int xPos = (size.width - width) / 2;
+    int yPos = (size.height - height) / 2;
+    
+    // 创建一个bitmap的context
+    // 并把它设置成为当前正在使用的context
+    UIGraphicsBeginImageContext(size);
+    
+    // 绘制改变大小的图片
+    [self drawInRect:CGRectMake(xPos, yPos, width, height)];
+    
+    // 从当前context中创建一个改变大小后的图片
+    UIImage* scaledImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // 使当前的context出堆栈
     UIGraphicsEndImageContext();
     
-    return output;
-}
-
-+ (UIImage *)createImageWithColor:(UIColor *)color {
-    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetFillColorWithColor(context, [color CGColor]);
-    CGContextFillRect(context, rect);
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    return image;
+    // 返回新的改变大小后的图片
+    return scaledImage;
 }
 
 @end
