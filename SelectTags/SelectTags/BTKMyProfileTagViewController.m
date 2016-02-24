@@ -19,6 +19,7 @@
 #import "LPTagCell.h"
 #import "LPTagTextFieldCell.h"
 #import "LPTagModel.h"
+#import "LPFPSLabel.h"
 
 @interface BTKMyProfileTagViewController () <UICollectionViewDataSource, UICollectionViewDelegateLeftAlignedLayout, LPAddTagDelegate, UIGestureRecognizerDelegate, LPSwitchTagDelegate>
 
@@ -42,6 +43,8 @@
     NSInteger _tagCollectionViewMaxHeight;
     NSInteger _selectedCollectionViewMaxHeight;
     NSInteger _selectedCollectionViewContentSizeHeight;
+    
+    LPFPSLabel *_fpsLabel;
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -58,6 +61,10 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.interactivePopGestureRecognizer.delegate = self;
     [self.view setBackgroundColor:[UIColor ST_F3F3F3_backgroundColor]];
+    
+    _fpsLabel = [LPFPSLabel new];
+    [_fpsLabel sizeToFit];
+    [self.view addSubview:_fpsLabel];
     
 //    UIImageView *imageView1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 400, 500)];
 //    UIGraphicsBeginImageContext(imageView1.frame.size);   //开始画线
@@ -230,7 +237,7 @@
         CGSize size = [((LPTagModel *)_selectedArray[indexPath.row]).name sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}];
         return CGSizeMake(size.width + 16, 30);
     }
-    return CGSizeMake(20, 30);
+    return CGSizeMake(100, 30);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {

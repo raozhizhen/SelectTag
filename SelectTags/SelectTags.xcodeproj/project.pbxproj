@@ -35,9 +35,10 @@
 		8833D0671BF7105D00B0ADC8 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 8833D05C1BF7105D00B0ADC8 /* README.md */; };
 		8833D0821BF7128C00B0ADC8 /* NSMutableArray+LPKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8833D0811BF7128C00B0ADC8 /* NSMutableArray+LPKit.m */; };
 		886AF3A81C7C0115000FF00E /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 886AF3A71C7C0115000FF00E /* avatar.png */; };
-		886AF3AB1C7C5084000FF00E /* LPMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF3AA1C7C5084000FF00E /* LPMath.m */; };
-		888B73E41C7AB0CB005A5BF3 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B73E31C7AB0CB005A5BF3 /* UIImage+RoundedCorner.m */; };
+		886AF3B11C7C5B64000FF00E /* LPFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF3B01C7C5B64000FF00E /* LPFPSLabel.m */; };
 		888B73E71C7AB8D9005A5BF3 /* UIColor+SelectTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B73E61C7AB8D9005A5BF3 /* UIColor+SelectTags.m */; };
+		88A7E4391C7DBCD2001358B4 /* LPMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A7E4361C7DBCD2001358B4 /* LPMath.m */; };
+		88A7E43A1C7DBCD2001358B4 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A7E4381C7DBCD2001358B4 /* UIImage+RoundedCorner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,12 +117,14 @@
 		8833D0801BF7128C00B0ADC8 /* NSMutableArray+LPKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+LPKit.h"; sourceTree = "<group>"; };
 		8833D0811BF7128C00B0ADC8 /* NSMutableArray+LPKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+LPKit.m"; sourceTree = "<group>"; };
 		886AF3A71C7C0115000FF00E /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
-		886AF3A91C7C5084000FF00E /* LPMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPMath.h; sourceTree = "<group>"; };
-		886AF3AA1C7C5084000FF00E /* LPMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPMath.m; sourceTree = "<group>"; };
-		888B73E21C7AB0CB005A5BF3 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
-		888B73E31C7AB0CB005A5BF3 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
+		886AF3AF1C7C5B64000FF00E /* LPFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPFPSLabel.h; sourceTree = "<group>"; };
+		886AF3B01C7C5B64000FF00E /* LPFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPFPSLabel.m; sourceTree = "<group>"; };
 		888B73E51C7AB8D9005A5BF3 /* UIColor+SelectTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SelectTags.h"; sourceTree = "<group>"; };
 		888B73E61C7AB8D9005A5BF3 /* UIColor+SelectTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SelectTags.m"; sourceTree = "<group>"; };
+		88A7E4351C7DBCD2001358B4 /* LPMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPMath.h; sourceTree = "<group>"; };
+		88A7E4361C7DBCD2001358B4 /* LPMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPMath.m; sourceTree = "<group>"; };
+		88A7E4371C7DBCD2001358B4 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
+		88A7E4381C7DBCD2001358B4 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +179,8 @@
 				8833D02A1BF70F4D00B0ADC8 /* LPTags */,
 				8833D03F1BF70FA400B0ADC8 /* BTKMyProfileTagViewController.h */,
 				8833D0401BF70FA400B0ADC8 /* BTKMyProfileTagViewController.m */,
+				886AF3AF1C7C5B64000FF00E /* LPFPSLabel.h */,
+				886AF3B01C7C5B64000FF00E /* LPFPSLabel.m */,
 				8833CFFA1BF70E5200B0ADC8 /* AppDelegate.h */,
 				8833CFFB1BF70E5200B0ADC8 /* AppDelegate.m */,
 				8833CFFD1BF70E5200B0ADC8 /* ViewController.h */,
@@ -218,15 +223,12 @@
 		8833D02A1BF70F4D00B0ADC8 /* LPTags */ = {
 			isa = PBXGroup;
 			children = (
+				88A7E4341C7DBCD2001358B4 /* JMRoundedCorner */,
 				888B73E51C7AB8D9005A5BF3 /* UIColor+SelectTags.h */,
 				888B73E61C7AB8D9005A5BF3 /* UIColor+SelectTags.m */,
-				886AF3A91C7C5084000FF00E /* LPMath.h */,
-				886AF3AA1C7C5084000FF00E /* LPMath.m */,
 				8833D0801BF7128C00B0ADC8 /* NSMutableArray+LPKit.h */,
 				8833D0811BF7128C00B0ADC8 /* NSMutableArray+LPKit.m */,
 				886AF3A71C7C0115000FF00E /* avatar.png */,
-				888B73E21C7AB0CB005A5BF3 /* UIImage+RoundedCorner.h */,
-				888B73E31C7AB0CB005A5BF3 /* UIImage+RoundedCorner.m */,
 				8833D02B1BF70F4D00B0ADC8 /* LPTagCell.h */,
 				8833D02C1BF70F4D00B0ADC8 /* LPTagCell.m */,
 				8833D02D1BF70F4D00B0ADC8 /* LPTagCollectionView.h */,
@@ -297,6 +299,17 @@
 				8833D05B1BF7105D00B0ADC8 /* View+MASShorthandAdditions.h */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		88A7E4341C7DBCD2001358B4 /* JMRoundedCorner */ = {
+			isa = PBXGroup;
+			children = (
+				88A7E4351C7DBCD2001358B4 /* LPMath.h */,
+				88A7E4361C7DBCD2001358B4 /* LPMath.m */,
+				88A7E4371C7DBCD2001358B4 /* UIImage+RoundedCorner.h */,
+				88A7E4381C7DBCD2001358B4 /* UIImage+RoundedCorner.m */,
+			);
+			path = JMRoundedCorner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,24 +448,25 @@
 				8833D0661BF7105D00B0ADC8 /* View+MASAdditions.m in Sources */,
 				8833D03D1BF70F4D00B0ADC8 /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				888B73E71C7AB8D9005A5BF3 /* UIColor+SelectTags.m in Sources */,
-				886AF3AB1C7C5084000FF00E /* LPMath.m in Sources */,
 				8833D0671BF7105D00B0ADC8 /* README.md in Sources */,
 				8833D03E1BF70F4D00B0ADC8 /* UIViewController+BackButtonHandler.m in Sources */,
 				8833D03A1BF70F4D00B0ADC8 /* LPTagCollectionView.m in Sources */,
-				888B73E41C7AB0CB005A5BF3 /* UIImage+RoundedCorner.m in Sources */,
 				8833CFFF1BF70E5200B0ADC8 /* ViewController.m in Sources */,
 				8833D0821BF7128C00B0ADC8 /* NSMutableArray+LPKit.m in Sources */,
 				8833D03B1BF70F4D00B0ADC8 /* LPTagModel.m in Sources */,
 				8833D0621BF7105D00B0ADC8 /* MASViewAttribute.m in Sources */,
 				8833D05E1BF7105D00B0ADC8 /* MASCompositeConstraint.m in Sources */,
+				88A7E43A1C7DBCD2001358B4 /* UIImage+RoundedCorner.m in Sources */,
 				8833D03C1BF70F4D00B0ADC8 /* LPTagTextFieldCell.m in Sources */,
 				8833CFFC1BF70E5200B0ADC8 /* AppDelegate.m in Sources */,
 				8833D0601BF7105D00B0ADC8 /* MASConstraintMaker.m in Sources */,
 				8833D05F1BF7105D00B0ADC8 /* MASConstraint.m in Sources */,
 				8833D0651BF7105D00B0ADC8 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				8833D0611BF7105D00B0ADC8 /* MASLayoutConstraint.m in Sources */,
+				88A7E4391C7DBCD2001358B4 /* LPMath.m in Sources */,
 				8833D0641BF7105D00B0ADC8 /* NSArray+MASAdditions.m in Sources */,
 				8833D0411BF70FA400B0ADC8 /* BTKMyProfileTagViewController.m in Sources */,
+				886AF3B11C7C5B64000FF00E /* LPFPSLabel.m in Sources */,
 				8833D0391BF70F4D00B0ADC8 /* LPTagCell.m in Sources */,
 				8833CFF91BF70E5200B0ADC8 /* main.m in Sources */,
 				8833D0631BF7105D00B0ADC8 /* MASViewConstraint.m in Sources */,

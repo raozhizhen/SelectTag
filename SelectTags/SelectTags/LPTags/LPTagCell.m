@@ -36,11 +36,6 @@
     [_textLabel setTextAlignment:NSTextAlignmentCenter];
     _textLabel.font = [UIFont systemFontOfSize:14];
     [self.contentView addSubview:_textLabel];
-    
-//    self.contentView.layer.cornerRadius = 5;
-//    self.contentView.layer.borderWidth = 3;
-//    self.contentView.layer.borderColor = [UIColor redColor].CGColor;
-//    self.layer.masksToBounds =  YES;
 }
 
 - (void)updateConstraints {
@@ -48,7 +43,7 @@
     
     [_textLabel mas_updateConstraints:^(MASConstraintMaker *make) {
         make.bottom.top.equalTo(self.contentView).offset(0);
-        make.width.equalTo(self.contentView);
+        make.width.equalTo(self);
     }];
     
     [_imageView mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -82,7 +77,7 @@
             [_textLabel setTextColor:[UIColor ST_009788_mainColor]];
             __weak __typeof(self) weakSelf = self;
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                UIImage *image = [UIImage jm_imageWithRoundedCornersAndSize:weakSelf.frame.size CornerRadius:4 borderColor:[UIColor ST_009788_mainColor] borderWidth:0.5];
+                UIImage *image = [UIImage jm_imageWithRoundedCornersAndSize:weakSelf.frame.size CornerRadius:4 borderColor:[UIColor ST_009788_mainColor] borderWidth:1];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     weakSelf.imageView.image = image;
                 });

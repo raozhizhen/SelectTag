@@ -68,7 +68,6 @@
     
     if (_chooseNumber < _maximumNumber) {
         _chooseNumber ++;
-        NSLog(@"---%ld ++", (long)_chooseNumber);
         ((LPTagModel *)_tagArray[indexPath.row]).isChoose = YES;
         cell.model = _tagArray[indexPath.row];
         [self switchTag:cell.model];
@@ -82,7 +81,6 @@
             return;
         }
         NSLog(@"最多选择%li个标签", (long)_maximumNumber);
-//        [LPToast showToast:[NSString stringWithFormat:@"最多选择%li个标签", (long)_maximumNumber]];
     }
 }
 
@@ -91,7 +89,6 @@
     if (((LPTagModel *)_tagArray[indexPath.row]).isChoose) {
         ((LPTagModel *)_tagArray[indexPath.row]).isChoose = NO;
         _chooseNumber --;
-        NSLog(@"---%ld --", (long)_chooseNumber);
         cell.model = _tagArray[indexPath.row];
         [self disSwitchTag:cell.model];
 
@@ -132,9 +129,6 @@
     }
 }
 
-
-
-
 #pragma mark - UICollectionViewDelegateLeftAlignedLayout
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -146,15 +140,12 @@
     return 12;
 }
 
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
-{
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
     return 12;
 }
 
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(12, 12, 12, 12);
 }
-
 
 @end
