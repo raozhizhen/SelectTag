@@ -37,8 +37,6 @@
 		886AF3A81C7C0115000FF00E /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 886AF3A71C7C0115000FF00E /* avatar.png */; };
 		886AF3B11C7C5B64000FF00E /* LPFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 886AF3B01C7C5B64000FF00E /* LPFPSLabel.m */; };
 		888B73E71C7AB8D9005A5BF3 /* UIColor+SelectTags.m in Sources */ = {isa = PBXBuildFile; fileRef = 888B73E61C7AB8D9005A5BF3 /* UIColor+SelectTags.m */; };
-		88A7E4391C7DBCD2001358B4 /* LPMath.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A7E4361C7DBCD2001358B4 /* LPMath.m */; };
-		88A7E43A1C7DBCD2001358B4 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A7E4381C7DBCD2001358B4 /* UIImage+RoundedCorner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,10 +119,6 @@
 		886AF3B01C7C5B64000FF00E /* LPFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPFPSLabel.m; sourceTree = "<group>"; };
 		888B73E51C7AB8D9005A5BF3 /* UIColor+SelectTags.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+SelectTags.h"; sourceTree = "<group>"; };
 		888B73E61C7AB8D9005A5BF3 /* UIColor+SelectTags.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SelectTags.m"; sourceTree = "<group>"; };
-		88A7E4351C7DBCD2001358B4 /* LPMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LPMath.h; sourceTree = "<group>"; };
-		88A7E4361C7DBCD2001358B4 /* LPMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LPMath.m; sourceTree = "<group>"; };
-		88A7E4371C7DBCD2001358B4 /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
-		88A7E4381C7DBCD2001358B4 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +217,6 @@
 		8833D02A1BF70F4D00B0ADC8 /* LPTags */ = {
 			isa = PBXGroup;
 			children = (
-				88A7E4341C7DBCD2001358B4 /* JMRoundedCorner */,
 				888B73E51C7AB8D9005A5BF3 /* UIColor+SelectTags.h */,
 				888B73E61C7AB8D9005A5BF3 /* UIColor+SelectTags.m */,
 				8833D0801BF7128C00B0ADC8 /* NSMutableArray+LPKit.h */,
@@ -299,17 +292,6 @@
 				8833D05B1BF7105D00B0ADC8 /* View+MASShorthandAdditions.h */,
 			);
 			path = Masonry;
-			sourceTree = "<group>";
-		};
-		88A7E4341C7DBCD2001358B4 /* JMRoundedCorner */ = {
-			isa = PBXGroup;
-			children = (
-				88A7E4351C7DBCD2001358B4 /* LPMath.h */,
-				88A7E4361C7DBCD2001358B4 /* LPMath.m */,
-				88A7E4371C7DBCD2001358B4 /* UIImage+RoundedCorner.h */,
-				88A7E4381C7DBCD2001358B4 /* UIImage+RoundedCorner.m */,
-			);
-			path = JMRoundedCorner;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -456,14 +438,12 @@
 				8833D03B1BF70F4D00B0ADC8 /* LPTagModel.m in Sources */,
 				8833D0621BF7105D00B0ADC8 /* MASViewAttribute.m in Sources */,
 				8833D05E1BF7105D00B0ADC8 /* MASCompositeConstraint.m in Sources */,
-				88A7E43A1C7DBCD2001358B4 /* UIImage+RoundedCorner.m in Sources */,
 				8833D03C1BF70F4D00B0ADC8 /* LPTagTextFieldCell.m in Sources */,
 				8833CFFC1BF70E5200B0ADC8 /* AppDelegate.m in Sources */,
 				8833D0601BF7105D00B0ADC8 /* MASConstraintMaker.m in Sources */,
 				8833D05F1BF7105D00B0ADC8 /* MASConstraint.m in Sources */,
 				8833D0651BF7105D00B0ADC8 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				8833D0611BF7105D00B0ADC8 /* MASLayoutConstraint.m in Sources */,
-				88A7E4391C7DBCD2001358B4 /* LPMath.m in Sources */,
 				8833D0641BF7105D00B0ADC8 /* NSArray+MASAdditions.m in Sources */,
 				8833D0411BF70FA400B0ADC8 /* BTKMyProfileTagViewController.m in Sources */,
 				886AF3B11C7C5B64000FF00E /* LPFPSLabel.m in Sources */,

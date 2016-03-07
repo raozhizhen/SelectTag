@@ -133,7 +133,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize size = [((LPTagModel *)_tagArray[indexPath.row]).name sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]}];
-    return CGSizeMake(size.width + 16, 30);
+    return CGSizeMake(pixel(size.width + 16), 30);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
@@ -146,6 +146,13 @@
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(12, 12, 12, 12);
+}
+
+extern float pixel(float num) {
+    
+    float unit = 1.0 / [UIScreen mainScreen].scale;
+    double remain = fmod(num, unit);
+    return num - remain + (remain >= unit / 2.0? unit: 0);
 }
 
 @end

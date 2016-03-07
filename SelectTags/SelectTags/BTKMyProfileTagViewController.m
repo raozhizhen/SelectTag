@@ -11,7 +11,6 @@
 #import "UIViewController+BackButtonHandler.h"
 #import "UICollectionViewLeftAlignedLayout.h"
 #import "UIColor+SelectTags.h"
-#import "UIImage+RoundedCorner.h"
 #import "NSMutableArray+LPKit.h"
 #import "Masonry.h"
 
@@ -65,36 +64,6 @@
     _fpsLabel = [LPFPSLabel new];
     [_fpsLabel sizeToFit];
     [self.view addSubview:_fpsLabel];
-    
-//    UIImageView *imageView1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 400, 500)];
-//    UIGraphicsBeginImageContext(imageView1.frame.size);   //开始画线
-//    [imageView1.image drawInRect:CGRectMake(0, 0, imageView1.frame.size.width, imageView1.frame.size.height)];
-//    //设置上下文
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    //边框大小
-//    CGContextSetLineWidth(context, 6);
-//    //边框颜色
-//    CGContextSetStrokeColorWithColor(context, [UIColor redColor].CGColor);
-//    //矩形填充颜色
-//    CGContextSetFillColorWithColor(context, [UIColor whiteColor].CGColor);
-//    /*
-//     大概解释一下
-//     从（100，100-70）到（100，100）画一条线，然后再从（100，100）到（ 100-20, 100）画一条线，从这两条线（无限延伸的） 和半径10可以确定一条弧
-//     说的是下面前两行的意思  下面依次类推
-//     */
-//    CGFloat height = 60;
-//    CGFloat width = 80;
-//    CGFloat radius = 30;
-//    CGFloat boardWidth = 6 / 2;
-//    
-//    CGContextMoveToPoint(context, width - boardWidth, radius + boardWidth);  // 开始坐标右边开始
-//    CGContextAddArcToPoint(context, width - boardWidth, height - boardWidth, width - radius - boardWidth, height - boardWidth, radius);  // 右下角角度
-//    CGContextAddArcToPoint(context, boardWidth, height - boardWidth, boardWidth, height - radius - boardWidth, radius); // 左下角角度
-//    CGContextAddArcToPoint(context, boardWidth, boardWidth, width - boardWidth, boardWidth, radius); // 左上角
-//    CGContextAddArcToPoint(context, width - boardWidth, boardWidth, width - boardWidth, radius + boardWidth, radius); // 右上角
-//    CGContextDrawPath(context, kCGPathFillStroke); //根据坐标绘制路径
-//    imageView1.image = UIGraphicsGetImageFromCurrentImageContext();//获取绘图
-//    [self.view addSubview:imageView1];
 }
 
 - (void)loadData {
@@ -162,10 +131,13 @@
     [_submitButton addTarget:self action:@selector(submitClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_submitButton];
 
-    [self refreshConstraints];
+    [self.view updateConstraintsIfNeeded];
+    [self.view layoutIfNeeded];
 }
 
 - (void)updateViewConstraints {
+    [super updateViewConstraints];
+
     if (_selectedCollectionViewHeight == 0) {
         _selectedCollectionViewHeight = _selectedCollectionView.contentSize.height;
     }
@@ -199,16 +171,7 @@
         make.right.equalTo(self.view).offset(-12);
         make.height.mas_equalTo(44);
     }];
-    [super updateViewConstraints];
 }
-
-- (void)refreshConstraints {
-    [self.view setNeedsUpdateConstraints];
-    [self.view updateConstraintsIfNeeded];
-    [self.view layoutIfNeeded];
-    [self.view setNeedsDisplay];
-}
-
 
 #pragma mark - UICollectionViewDataSource
 

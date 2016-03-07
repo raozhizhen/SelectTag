@@ -37,30 +37,12 @@
     [_textField addTarget:self action:@selector(textFieldChanged:) forControlEvents:UIControlEventEditingChanged];
     [self.contentView addSubview:_textField];
     
-//    _returnKeyHandler = [[IQKeyboardReturnKeyHandler alloc] init];
-//    _returnKeyHandler.lastTextFieldReturnKeyType = UIReturnKeyNext;
-//    _returnKeyHandler.delegate = self;
-//    [_returnKeyHandler addTextFieldView:_textField];
-    
-    [self refreshConstraints];
-}
-
-- (void)updateConstraints {
-    [super updateConstraints];
-    
     [_textField mas_updateConstraints:^(MASConstraintMaker *make) {
         make.right.top.bottom.equalTo(self.contentView);
         make.left.equalTo(self.contentView).offset(-3.5);
     }];
 }
 
-- (void)refreshConstraints {
-    [self setNeedsUpdateConstraints];
-    [self updateConstraintsIfNeeded];
-    
-    [self setNeedsDisplay];
-    [self layoutIfNeeded];
-}
 
 + (NSString *)cellReuseIdentifier {
     return NSStringFromClass(self);
